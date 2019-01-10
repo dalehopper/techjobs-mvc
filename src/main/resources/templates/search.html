@@ -37,7 +37,15 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
-
+    <div th:fragment = "listDisplay">
+    <h3 th:text = "${searchHead}"></h3>
+    <table th:each = "job : ${jobs}" class = "job-listing">
+        <tr th:each = "hashPair : ${job}">
+            <td th:text = "${hashPair.getKey()}"></td>
+            <td th:text = "${hashPair.getValue()}"></td>
+        </tr>
+    </table>
+    </div>
 </div>
 
 </body>
